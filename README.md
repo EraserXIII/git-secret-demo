@@ -1,4 +1,4 @@
-# Precommit Hook POC
+# Git-Secret Demo
 
 ## Why use it
 
