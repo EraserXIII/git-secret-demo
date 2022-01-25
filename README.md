@@ -16,11 +16,15 @@ Some options will appear in the console, and we follow the default ones:
 * 3072
 * 0 = key does not expire
 
-![img_1.png](img_1.png)
+![gpg-key-creation](images/gpg-key-creation.png)
 
 After that gpg will ask for personal data such us our name and email. This data will be attached to the key so we can identify it.
 
-We have to deliver each one of this keys to the actual user for him to be able to encrypt and decrypt the hidden files.
+We have to deliver the public key to the administrator, so he can add it to the git-secret keys registry.
+
+We can export the key using the command `gpg --output {username}.gpg --export {useremail}`. 
+
+And to import it we use: `gpg --import {username}.gpg`.
 
 ## How to use
 
@@ -32,17 +36,8 @@ Ones we have the git-secret installed and the gpg pair keys generated, we can st
 
 `git-secret add {filename}}`: Add a file which will be encrypted by git-secret.
 
-git-secret hide
+`git-secret hide`: Encrypt all files added to git-secret.
 
-git-secret reveal
+`git-secret reveal`: Decrypt all files added to git-secret using the user gpg key.
 
-* `yarn add -D husky`
-* `yarn husky install`
-* `yarn install`
-
-## Create a hook
-
-```sh
-npx husky add .husky/pre-commit "yarn test"
-# husky - created .husky/pre-commit
-```
+For more information about the git-secret commands refer to it [page](https://git-secret.io/#commands).
