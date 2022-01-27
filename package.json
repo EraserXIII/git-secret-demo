@@ -40,9 +40,11 @@
       "last 1 safari version"
     ]
   },
-  "testMatch": [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[jt]s?(x)",
-    "src/?(*.)+(spec|test).[jt]s?(x)"
-  ]
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "<rootDir>/src/*.(spec|test).[jt]s?(x)"
+    ]
+  }
 }
